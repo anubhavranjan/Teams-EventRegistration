@@ -1,0 +1,7 @@
+.ui-carousel__item, .ui-carousel__itemscontainer, .ui-carrouselpaddles_container {
+    width: 100% !important
+}
+
+.ui-carousel > div:nth-child(2) {
+    width: 100% !important
+}

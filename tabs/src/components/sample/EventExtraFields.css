@@ -1,0 +1,14 @@
+.exfHeader {
+    background-color: #0c6efd;
+    padding: 5px;
+    color: white;
+}
+
+h3.exfHeader {
+    margin: 0;
+}
+
+.exfBody {
+    border: 1px solid#0c6efd;
+    padding: 5px;
+}
