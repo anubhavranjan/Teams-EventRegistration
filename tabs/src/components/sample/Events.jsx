@@ -1,9 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { TeamsFxContext } from "../Context";
+import React, { useEffect } from "react";
 import { Button, Carousel, Image, Loader } from '@fluentui/react-northstar'
 import "./Events.css"
 export function Events(props) {
-    const { teamsUserCredential } = useContext(TeamsFxContext);
     const [events, setEvents] = React.useState([]);
     const [renderEvents, setRenderEvents] = React.useState([]);
     const [loading, setLoading] = React.useState(true);

@@ -1,10 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { TeamsFxContext } from "../Context";
-import { Button, Carousel, Image, Input } from '@fluentui/react-northstar';
+import React from "react";
+import { Button, Input } from '@fluentui/react-northstar';
 
 export function ScanEmployee(props) {
-    const { teamsUserCredential } = useContext(TeamsFxContext);
-    const [loading, setLoading] = React.useState(true);
     const [empId, setEmpId] = React.useState("");
 
     const getEmployee = async () => {
@@ -19,7 +16,6 @@ export function ScanEmployee(props) {
 
             if (employeeResponse.ok) {
                 let employeeData = await employeeResponse.json();
-                //console.log(employeeData);
                 props.updateStep(3, { employee: employeeData });
             } else {
 

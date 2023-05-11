@@ -14,39 +14,18 @@ import { ScanEmployee } from "./ScanEmployee";
 import { EventExtraFields } from "./EventExtraFields";
 
 export function Welcome(props) {
-  const { showFunction, environment } = {
-    showFunction: true,
-    environment: window.location.hostname === "localhost" ? "local" : "azure",
-    ...props,
-  };
-  // const friendlyEnvironmentName =
-  //   {
-  //     local: "local environment",
-  //     azure: "Azure environment",
-  //   }[environment] || "local environment";
-
-  // const steps = ["local", "azure", "publish"];
-  // const friendlyStepsName = {
-  //   local: "1. Build your app locally",
-  //   azure: "2. Provision and Deploy to the Cloud",
-  //   publish: "3. Publish to Teams",
+  // const { showFunction, environment } = {
+  //   showFunction: true,
+  //   environment: window.location.hostname === "localhost" ? "local" : "azure",
+  //   ...props,
   // };
-  // const [selectedMenuItem, setSelectedMenuItem] = useState("local");
-  // const items = steps.map((step) => {
-  //   return {
-  //     key: step,
-  //     content: friendlyStepsName[step] || "",
-  //     onClick: () => setSelectedMenuItem(step),
-  //   };
+  // const { teamsUserCredential } = useContext(TeamsFxContext);
+  // const { loading, data, error } = useData(async () => {
+  //   if (teamsUserCredential) {
+  //     const userInfo = await teamsUserCredential.getUserInfo();
+  //     return userInfo;
+  //   }
   // });
-
-  const { teamsUserCredential } = useContext(TeamsFxContext);
-  const { loading, data, error } = useData(async () => {
-    if (teamsUserCredential) {
-      const userInfo = await teamsUserCredential.getUserInfo();
-      return userInfo;
-    }
-  });
   const [selectedEvent, setSelectedEvent] = useState(undefined);
   const [employee, setEmployee] = useState(undefined);
   const [menu, setMenu] = useState(1);
@@ -58,11 +37,10 @@ export function Welcome(props) {
     if (step === 3) {
       setEmployee(data.employee);
       setMenu(3);
-      //console.log(data.employee);
     }
 
   }
-  const userName = (loading || error) ? "" : data.displayName;
+  //const userName = (loading || error) ? "" : data.displayName;
   return (
     <div className="narrow page-padding" style={{ padding: "2rem" }}>
       <div style={{ textAlign: "center" }}>

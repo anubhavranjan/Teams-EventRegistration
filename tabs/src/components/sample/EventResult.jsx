@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { TeamsFxContext } from "../Context";
-import { Button, Carousel, Flex, Image, Input, Dropdown, Table, Checkbox, Text } from '@fluentui/react-northstar';
+import React from "react";
+import { Button } from '@fluentui/react-northstar';
 
 export function EventResult(props) {
     const [event, setEvent] = React.useState(props.event);

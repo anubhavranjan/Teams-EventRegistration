@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { TeamsFxContext } from "../Context";
+import React, { useEffect } from "react";
 import { Button, Flex, Input, Dropdown, Table, Checkbox, Text } from '@fluentui/react-northstar';
 import "./EventExtraFields.css";
 import { EventResult } from "./EventResult";
@@ -61,8 +60,6 @@ export function EventExtraFields(props) {
 
     useEffect(() => {
         if (extraFields && extraFields.length > 0) {
-            //let tExtraFields = JSON.parse(JSON.stringify(extraFields));
-            //tExtraFields.sort((a, b) => a.FieldOrder - b.FieldOrder);
             let tempFields = extraFields.map((field) => {
                 if (field && field.FieldType !== "") {
                     switch (field.FieldType) {
@@ -168,36 +165,9 @@ export function EventExtraFields(props) {
                 <div className="exfBody">
                     <p>Evento en el que desea registrarse</p>
                     <p><b>{event.Name}</b></p>
-                    {/* <Dropdown
-                    items={getEvents()}
-                    placeholder={event.Name} fluid
-                    disabled
-                /> */}
                     <br />
                     {renderFields}
                     <p><Text error content="* No se requiere resistrar a menores de 1 ano" /></p>
-
-                    {/* <p>
-                    Total de personas que asistirán
-                </p>
-                <Dropdown items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-                    placeholder="Seleccione una opción" fluid
-                />
-                <br />
-                <p>Planta</p>
-                <Dropdown items={["Planta Mty", "Planta5"]}
-                    placeholder="Seleccione una opción" fluid
-                />
-                <br />
-                <p>
-                    Alergias
-                </p>
-                <Input type="text" fluid />
-                <br />
-                <p>Planta</p>
-                <Dropdown items={["Planta Mty", "Planta5"]}
-                    placeholder="Seleccione una opción" fluid
-                /> */}
                 </div>
                 <Flex gap="gap.small">
                     <Button fluid primary onClick={() => setRegisterStatus(1)}>Registrarse al evento</Button>
