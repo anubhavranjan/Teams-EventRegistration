@@ -1,31 +1,11 @@
-import { useContext, useState } from "react";
-import { Image, Menu } from "@fluentui/react-northstar";
+import { useState } from "react";
+import { Image } from "@fluentui/react-northstar";
 import "./Welcome.css";
-import { EditCode } from "./EditCode";
-import { AzureFunctions } from "./AzureFunctions";
-import { Graph } from "./Graph";
-import { CurrentUser } from "./CurrentUser";
-import { useData } from "@microsoft/teamsfx-react";
-import { Deploy } from "./Deploy";
-import { Publish } from "./Publish";
-import { TeamsFxContext } from "../Context";
 import { Events } from "./Events";
 import { ScanEmployee } from "./ScanEmployee";
 import { EventExtraFields } from "./EventExtraFields";
 
 export function Welcome(props) {
-  // const { showFunction, environment } = {
-  //   showFunction: true,
-  //   environment: window.location.hostname === "localhost" ? "local" : "azure",
-  //   ...props,
-  // };
-  // const { teamsUserCredential } = useContext(TeamsFxContext);
-  // const { loading, data, error } = useData(async () => {
-  //   if (teamsUserCredential) {
-  //     const userInfo = await teamsUserCredential.getUserInfo();
-  //     return userInfo;
-  //   }
-  // });
   const [selectedEvent, setSelectedEvent] = useState(undefined);
   const [employee, setEmployee] = useState(undefined);
   const [menu, setMenu] = useState(1);
@@ -38,9 +18,7 @@ export function Welcome(props) {
       setEmployee(data.employee);
       setMenu(3);
     }
-
   }
-  //const userName = (loading || error) ? "" : data.displayName;
   return (
     <div className="narrow page-padding" style={{ padding: "2rem" }}>
       <div style={{ textAlign: "center" }}>
