@@ -4,7 +4,7 @@
   "parameters": {
     "provisionParameters": {
       "value": {
-        "resourceBaseName": "eventregis75bf28",
+        "resourceBaseName": "eventregis7sqf28",
         "m365ClientId": "{{state.aad-app.clientId}}",
         "m365ClientSecret": "{{state.aad-app.clientSecret}}",
         "m365TenantId": "{{state.aad-app.tenantId}}",
